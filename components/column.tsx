@@ -24,7 +24,7 @@ export function Column({name, color} : {
             </div>
 
             <div className="h-full border-solid border-2 border-gray-300 rounded-md p-3 bg-gray-100">
-                <div className="bg-gray-300 bg-opacity-70 p-2 rounded-lg mx-3 mt-3">
+                <div className="bg-gray-300 bg-opacity-70 cursor-pointer p-2 rounded-lg mx-3 mt-3">
                     <div className="text-slate-600 font-semibold text-lg mb-2">Modélisation de la base de données</div>
                     <p className="text-slate-900 text-xm">Faire les graphes qui feront ressortir toutes les fonctionnalités à implémenter.</p>                   
                     <div className="text-right">

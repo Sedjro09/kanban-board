@@ -12,7 +12,7 @@ export function TopBar() {
                     <BoardOption />
                     
                     <div>
-                        <Link href="/profile"> 
+                        <Link href="/kanban/profile"> 
                             <span 
                                 className="text-3xl text-gray-600 mt-0"
                             >

@@ -11,7 +11,7 @@ export default function Page() {
     const [password, setPassword] = useState("")
 
   return (
-    <div className='h-screen bg-slate-200 flex flex-col items-center justify-center'>
+    
         <div className='w-1/3 bg-gray-50 p-5 shadow-lg rounded text-slate-900'> 
             <div className="mb-5">
                 <div className="text-center text-3xl font-bold mb-3">Connexion au Kanban</div>
@@ -55,6 +55,6 @@ export default function Page() {
         
         </div>
         
-    </div>
+    
   )
 }
