@@ -1,11 +1,11 @@
 "use client"
 import { useState } from "react"
 import {createPortal} from "react-dom"
-import { ModalAddTask } from "@/components/modalAddTask"
+import { ModalAddUser } from "@/components/modalAddUser"
 
 
 
-export function ButtonAddColumn ({ text, buttonClassName, } : {
+export function ButtonAddUser ({ text, buttonClassName, } : {
     text: string;
     buttonClassName: string;
     // modalManagement: () => void
@@ -26,7 +26,7 @@ export function ButtonAddColumn ({ text, buttonClassName, } : {
         >
             {text}
         </button>
-        { showModal && createPortal(<ModalAddTask closeModal={()=> setShowModal(false)} />, document.body) }
+        { showModal && createPortal(<ModalAddUser closeModal={()=> setShowModal(false)} />, document.body) }
     </>    
         
 }

@@ -2,10 +2,10 @@
 import { useState } from "react"
 import {createPortal} from "react-dom"
 import { ModalAddTask } from "@/components/modalAddTask"
+import { MdOutlineAddBox } from "react-icons/md";
 
 
-
-export function ButtonAddColumn ({ text, buttonClassName, } : {
+export function ButtonAddTask ({ text, buttonClassName, } : {
     text: string;
     buttonClassName: string;
     // modalManagement: () => void
@@ -23,8 +23,13 @@ export function ButtonAddColumn ({ text, buttonClassName, } : {
         <button 
             className={buttonClassName}
             onClick={handleButtonClick}
-        >
-            {text}
+        >    
+            <span className="mr-1"> 
+                {text} 
+            </span>
+            <span className="mt-1"> 
+                <MdOutlineAddBox />  
+            </span>
         </button>
         { showModal && createPortal(<ModalAddTask closeModal={()=> setShowModal(false)} />, document.body) }
     </>    
