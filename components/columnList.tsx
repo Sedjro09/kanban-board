@@ -18,7 +18,7 @@ export function ColumnList() {
 
 
             <div className="flex-shrink-0 w-72 flex flex-col m-5">   
-                <div className="mb-3">Add Column</div>
+                <div className="my-2">Add Column</div>
 
                 <div  
                     onClick={() => setShowModal(true)}
