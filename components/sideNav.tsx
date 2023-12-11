@@ -3,7 +3,16 @@ import { ButtonAddBoard } from "@/components/buttonAddBoard";
 import { FiLogOut } from "react-icons/fi";
 import { MdSpaceDashboard } from "react-icons/md";
 
-export function SideNav() {
+interface Board {
+    id: string;
+    name: string;
+}
+
+export function SideNav({}) {
+
+
+
+
     return <>
         <div className="flex flex-col h-full bg-slate-800">
             <div className="h-3/5">

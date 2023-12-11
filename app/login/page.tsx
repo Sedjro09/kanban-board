@@ -9,7 +9,7 @@ export default function Page() {
 
     const [pseudo, setPseudo] = useState("")
     const [password, setPassword] = useState("")
-
+    
   return (
     
         <div className='w-1/3 bg-gray-50 p-5 shadow-lg rounded text-slate-900'> 
@@ -45,7 +45,7 @@ export default function Page() {
             <p className="mt-4">
                 Vous n'avez pas encore de compte ? 
                 <Link 
-                    href="/signin"
+                    href="/signout"
                     className="text-blue-700 ml-2 underline"
                 > 
                     Inscrivez-vous

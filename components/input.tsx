@@ -1,12 +1,13 @@
 import React from 'react'
 import {useId} from 'react'
 
-export function Input({type, value, onChange, placeholder, label} : {
+export function Input({type, value, onChange, placeholder, label, inputRef} : {
     type: string;
     value: string;
     label: string
     placeholder: string;
-    onChange: () => void;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    inputRef?: React.Ref<HTMLInputElement>;
 }) {
 
   const id = useId()
@@ -22,6 +23,7 @@ export function Input({type, value, onChange, placeholder, label} : {
       value={value}
       onChange={onChange}
       placeholder={placeholder}
+      ref={inputRef as React.RefObject<HTMLInputElement>}
     />
   </div>
   

@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+
+import { CategoriesAPI } from '@/api/categories'
+
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+
+CategoriesAPI.fetchCategories()
 
 export const metadata: Metadata = {
   title: 'Mon tableau kanban',
@@ -15,7 +20,7 @@ export default function RootLayout({children,}: { children: React.ReactNode }) {
     <html lang="en">
       <body className={inter.className}>
 
-        <div className="h-screen bg-slate-200 flex flex-col items-center justify-center">
+        <div className="bg-slate-200 flex flex-col items-center justify-center">
 
             {children}
 
