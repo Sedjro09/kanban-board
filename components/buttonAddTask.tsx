@@ -2,7 +2,6 @@
 import { useState } from "react"
 import {createPortal} from "react-dom"
 import { ModalAddTask } from "@/components/modalAddTask"
-import { MdOutlineAddBox } from "react-icons/md";
 
 
 export function ButtonAddTask ({ text, buttonClassName, } : {
@@ -23,13 +22,8 @@ export function ButtonAddTask ({ text, buttonClassName, } : {
         <button 
             className={buttonClassName}
             onClick={handleButtonClick}
-        >    
-            <span className="mr-1"> 
-                {text} 
-            </span>
-            <span className="mt-1"> 
-                <MdOutlineAddBox />  
-            </span>
+        >
+            {text}
         </button>
         { showModal && createPortal(<ModalAddTask closeModal={()=> setShowModal(false)} />, document.body) }
     </>    

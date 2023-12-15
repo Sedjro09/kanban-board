@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import {createPortal} from "react-dom"
-import { ModalAddTask } from "@/components/modalAddTask"
+import { ModalAddColumn } from "@/components/modalAddColumn"
 
 
 
@@ -13,20 +13,18 @@ export function ButtonAddColumn ({ text, buttonClassName, } : {
 
     const [showModal, setShowModal] = useState(false)
 
-    const handleButtonClick = () => {
-        setShowModal(true);
-        // modalManagement();
-        console.log(showModal)
-    }
+    // const handleButtonClick = () => {
+    //     setShowModal(true);
+    // }
 
     return <>
         <button 
             className={buttonClassName}
-            onClick={handleButtonClick}
+            onClick={setShowModal}
         >
             {text}
         </button>
-        { showModal && createPortal(<ModalAddTask closeModal={()=> setShowModal(false)} />, document.body) }
+        { showModal && createPortal(<ModalAddColumn closeModal={()=> setShowModal(false)} />, document.body) }
     </>    
         
 }

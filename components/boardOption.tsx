@@ -6,6 +6,7 @@ import { ButtonAddColumn } from "@/components/buttonAddColumn";
 import { ButtonAddUser } from "@/components/buttonAddUser";
 import { ButtonEditBoard } from "@/components/buttonEditBoard";
 import { ButtonDeleteBoard } from "@/components/buttonDeleteBoard";
+import { ButtonAddTask } from "@/components/buttonAddTask";
 
 export function BoardOption() {
 
@@ -33,6 +34,10 @@ export function BoardOption() {
 
         { isModalVisible && (
             <div className=" flex flex-col absolute rounded top-10 -left-24 grow w-36 text-sm font-medium bg-white shadow-md z-8">
+                <ButtonAddTask
+                    buttonClassName="py-2 px-3 text-slate-800 hover:text-slate-900 hover:bg-gray-200" 
+                    text="Add Task"
+                />
                 <ButtonAddColumn 
                     buttonClassName="py-2 px-3 text-slate-800 hover:text-slate-900 hover:bg-gray-200" 
                     text="Add Column"

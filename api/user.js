@@ -1,28 +1,27 @@
-import axios from "axios";
+import { BASE_URL, PORT } from "@/api/info";
 
-const BASE_URL = "http://10.10.34.141:8080"
-// const TOKEN_KEY="0a4ae9421b52a54a5b26c6d5f94521520d00c216cdaa51f18a8e5054bca0bfdf"
+export function register() {
 
-export class User {
-  
-    static async register() {
-        const response = await axios.get(`${BASE_URL}/api/users/register`)
-        console.log("***", response.data)
-        return response.data
+  try {
+    // Effectuer la requête POST vers le backend avec async/await
+    const response = await fetch(`${BASE_URL}:${PORT}/api/users/register`, requestOptions);
+
+    if (!response.ok) {
+        // Si la réponse n'est pas OK (par exemple, une erreur 404), lancer une exception
+        throw new Error(`La requête a échoué avec le code d'erreur ${response.status}`);
     }
 
+    const responseData = await response.json();
+
+    // Faire quelque chose avec les données de réponse
+    console.log(responseData);
+    router.push('/login');
+} catch (error) {
+    // Gérer les erreurs
+    console.error("Erreur lors de la requête vers le backend :", error);
+} finally {
+  // Mettez le chargement à false, que la soumission réussisse ou échoue.
+  setLoading(false);
 }
 
-
-
-
-
-async function getUser(email: string): Promise<User | undefined> {
-    try {
-      const user = await sql<User>`SELECT * FROM users WHERE email=${email}`;
-      return user.rows[0];
-    } catch (error) {
-      console.error('Failed to fetch user:', error);
-      throw new Error('Failed to fetch user.');
-    }
-  }
+}
